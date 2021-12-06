@@ -40,6 +40,7 @@ module ReflinkSnapshot
 
     File.rename(full_path, full_path_tmp)
     File.rename(snap_path, full_path)
+    FileUtils.rm_rf(full_path_tmp)
 
     puts "Snapshot rollback successful"
   end
@@ -162,6 +163,10 @@ module ReflinkSnapshot
 
   def run
     args = parse_args
+
+    # Remove the root dir from the path if it is passed.
+    args.path = args.path.sub(Regex.new("^#{args.root_dir.rstrip("/")}/"), "")
+
     full_path = Path.new(args.root_dir, args.path)
     command_error "File/Directory(#{full_path}) not exists" unless File.exists?(full_path)
 

@@ -1,0 +1,14 @@
+name: reflink-snapshots
+version: 0.1.0
+
+authors:
+  - Kadalu.io <engineering@kadalu.io>
+
+description: |
+    Reflink based File/Directory Snapshots
+
+license: GPL-3.0
+
+targets:
+  reflink-snapshots:
+    main: src/main.cr

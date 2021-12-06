@@ -6,6 +6,13 @@ This tool works only if the XFS filesystem is created with the reflink support. 
 $ mkfs.xfs -b size=4096 -m reflink=1,crc=1 /dev/sdb
 ```
 
+## Install
+
+```
+curl -L https://github.com/kadalu/reflink-snapshot/releases/latest/download/reflink-snapshot-`uname -m | sed 's|aarch64|arm64|' | sed 's|x86_64|amd64|'` -o reflink-snapshot
+install reflink-snapshot /usr/local/bin/
+```
+
 ## Create a File or Directory Snapshot.
 
 ```

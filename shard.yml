@@ -10,5 +10,5 @@ description: |
 license: GPL-3.0
 
 targets:
-  reflink-snapshots:
+  reflink-snapshot:
     main: src/main.cr
